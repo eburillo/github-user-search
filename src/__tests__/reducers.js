@@ -1,6 +1,6 @@
 import React from 'react';
-import actionTypes from '../actions/action-types.js';
-import errorMessages from '../messages/errors.js';
+import ActionTypes from '../actions/action-types.js';
+import ErrorMessages from '../messages/errors.js';
 import reposReducer from '../reducers/repos-reducer.js';
 
 describe('Testing Reducers', function() {
@@ -51,7 +51,7 @@ describe('Testing Reducers', function() {
   		});
 
   		it('returns the state with the new repos founded', function() {
-  			expect(reposReducer(state, {type: actionTypes.GET_REPOS_SUCCESS, repos: response.repos})).toEqual(newState)
+  			expect(reposReducer(state, {type: ActionTypes.GET_REPOS_SUCCESS, repos: response.repos})).toEqual(newState)
   		});
 
 	   });
@@ -68,19 +68,19 @@ describe('Testing Reducers', function() {
    			}
         newState = {
            repos: {
-             message: "No repositories for this user.",
+             message: ErrorMessages.GET_NO_REPOS,
              list: []
            }
    			}
    		});
 
    		it('returns the state when no repos where founded', function() {
-   			expect(reposReducer(state, {type: actionTypes.GET_NO_REPOS})).toEqual(newState)
+   			expect(reposReducer(state, {type: ActionTypes.GET_NO_REPOS})).toEqual(newState)
    		});
 
  	   });
 
-     describe('on GET_NO_REPOS action', function() {
+     describe('on GET_REPOS_FAILED action', function() {
    		var state, newState, response;
 
    		beforeEach(function() {
@@ -92,14 +92,14 @@ describe('Testing Reducers', function() {
    			}
         newState = {
            repos: {
-             message: "No user found.",
+             message: ErrorMessages.GET_REPOS_FAILED,
              list: []
            }
    			}
    		});
 
    		it('returns the state when no user found', function() {
-   			expect(reposReducer(state, {type: actionTypes.GET_REPOS_FAILED})).toEqual(newState)
+   			expect(reposReducer(state, {type: ActionTypes.GET_REPOS_FAILED})).toEqual(newState)
    		});
  	   });
 
