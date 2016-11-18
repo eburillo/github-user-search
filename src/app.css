@@ -8,6 +8,11 @@ body {
   text-align: center;
 }
 
+.app-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
 .app-header {
   background-color: #222;
   padding: 5px;
