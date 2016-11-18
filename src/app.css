@@ -9,7 +9,7 @@ body {
 }
 
 .app-content {
-    max-width: 750px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -71,6 +71,7 @@ body {
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 3px;
+  margin-right: auto;
 }
 
 .repo-link {
