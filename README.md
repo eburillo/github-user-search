@@ -2,7 +2,7 @@
 
 Client-side App to get the list of GitHub repositories for a given user.
 
-This App was bootstraped with 'create-react-app' and build with React-Redux. Tests are done with Jest.
+This App was bootstraped with 'create-react-app' and built with React-Redux. Tests are done with Jest.
 
 ## Running the app
 
