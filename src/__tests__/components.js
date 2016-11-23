@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
 import {List} from '../components/presentational/list.js';
 import {Messenger} from '../components/presentational/messenger.js';
 import {Repo} from '../components/presentational/repo.js';
@@ -14,29 +15,32 @@ describe('Render Presentational components', function() {
           }
         ];
 
-    const div = document.createElement('div');
-    ReactDOM.render(
+    let tree = renderer.create(
       <List repos={list}>
-      </List>, div);
+      </List>
+    );
+    expect(tree).toMatchSnapshot();
   });
 
   it('renders a message in Messeger component', () => {
-    const message = "This is a testing message.";
-    const div = document.createElement('div');
-    ReactDOM.render(
+    let message = "This is a testing message.";
+    let tree = renderer.create(
       <Messenger message={message}>
-      </Messenger>, div);
+      </Messenger>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
   it('renders an item in Repo component', () => {
-    const repo = {
+    let repo = {
       "name": "atomic-design",
       "description": "The repository for the Atomic Design book",
       "html_url": "https://github.com/bradfrost/atomic-design"
     };
-    const div = document.createElement('div');
-    ReactDOM.render(
+    let tree = renderer.create(
       <Repo name={repo.name} url={repo.html_url} desc={repo.description}>
-      </Repo>, div);
+      </Repo>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

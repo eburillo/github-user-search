@@ -1,0 +1,40 @@
+exports[`Render Presentational components renders a list in List component 1`] = `
+<ul
+  className="repo-list">
+  <li
+    className="repo-item">
+    <a
+      className="repo-link"
+      href="https://github.com/bradfrost/atomic-design"
+      target="_blank">
+      atomic-design
+    </a>
+    <p
+      className="repo-desc">
+      The repository for the Atomic Design book
+    </p>
+  </li>
+</ul>
+`;
+
+exports[`Render Presentational components renders a message in Messeger component 1`] = `
+<p>
+  This is a testing message.
+</p>
+`;
+
+exports[`Render Presentational components renders an item in Repo component 1`] = `
+<li
+  className="repo-item">
+  <a
+    className="repo-link"
+    href="https://github.com/bradfrost/atomic-design"
+    target="_blank">
+    atomic-design
+  </a>
+  <p
+    className="repo-desc">
+    The repository for the Atomic Design book
+  </p>
+</li>
+`;
